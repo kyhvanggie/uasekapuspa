@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affine + Caesar Cipher</title>
+</head>
+<body>
+    <h1>Affine + Caesar Cipher</h1>
+
+    <form action="/encrypt" method="post">
+        <label for="plaintext">Plaintext:</label>
+        <input type="text" name="plaintext" required>
+        <label for="key_affine">Affine Key:</label>
+        <input type="number" name="key_affine" required>
+        <label for="key_caesar">Caesar Key:</label>
+        <input type="number" name="key_caesar" required>
+        <button type="submit">Encrypt</button>
+    </form>
+
+    <form action="/decrypt" method="post">
+        <label for="ciphertext">Ciphertext:</label>
+        <input type="text" name="ciphertext" required>
+        <label for="key_affine">Affine Key:</label>
+        <input type="number" name="key_affine" required>
+        <label for="key_caesar">Caesar Key:</label>
+        <input type="number" name="key_caesar" required>
+        <button type="submit">Decrypt</button>
+    </form>
+
+    {% if ciphertext %}
+    <p>Ciphertext: {{ ciphertext }}</p>
+    {% endif %}
+
+    {% if decrypted_text %}
+    <p>Decrypted Text: {{ decrypted_text }}</p>
+    {% endif %}
+</body>
+</html>
